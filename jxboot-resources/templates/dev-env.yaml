@@ -30,12 +30,17 @@ spec:
     envOrganisation: "{{ .Values.gitops.dev.envOrganisation }}"
     gitServer: https://github.com
     helmTemplate: true
-    importMode: YAML
     kubeProvider: gke
     pipelineUsername: "{{ .Values.JenkinsXGitHub.username }}"
-    promotionEngine: Prow
     prowConfig: Scheduler
+{{- if eq .Values.gitops.webhook "jenkins" }}
+    promotionEngine: Jenkins
+    importMode: Jenkinsfile
+{{- else }}
+    importMode: YAML
+    promotionEngine: Prow
     prowEngine: Tekton
+{{- end }}
     quickstartLocations:
     - excludes:
       - WIP-*
