@@ -1,0 +1,57 @@
+JenkinsXGitHub:
+  password: ""
+  username: ""
+certmanager:
+  enabled: false
+  production: "false"
+cluster:
+  domain: ""
+  name: ""
+  namespace: jx
+  namespaceSubDomain: -jx.
+  projectID: ""
+  serverUrl: ""
+  zone: ""
+docker-registry:
+  enabled: false
+gitops:
+  dev:
+    dockerRegistryOrg: ""
+    envOrganisation: ""
+    owner: ""
+    repo: ""
+    server: ""
+  gitKind: github
+  gitName: ""
+  gitUrlPathPrefix: ""
+  owner: ""
+  production:
+    owner: ""
+    repo: ""
+    server: ""
+  server: https://github.com
+  staging:
+    owner: ""
+    repo: ""
+    server: ""
+  versionStreamRef: ""
+  versionStreamUrl: https://github.com/jenkins-x/jenkins-x-versions.git
+  webhook: ""
+jenkins:
+  enabled: false
+jenkins-x-platform:
+  chartmuseum:
+    enabled: true
+lighthouse:
+  enabled: true
+nexus:
+  enabled: true
+prow:
+  enabled: false
+storage:
+  logs:
+    url: ""
+  reports:
+    url: ""
+  repository:
+    url: ""
