@@ -63,4 +63,4 @@ spec:
     versionStreamUrl: "{{ .Values.gitops.versionStreamUrl }}"
     versionStreamRef: "{{ .Values.gitops.versionStreamRef }}"
     useGitOps: true
-  webHookEngine: "{{ .Values.gitops.webhook }}"
+  webHookEngine: "{{ .Values.gitops.webhook | title }}"
