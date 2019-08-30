@@ -40,6 +40,7 @@ spec:
   policy:
     protectTested: true
   postsubmits:
+    replace: true
     entries:
     - agent: tekton
       branches:
@@ -54,6 +55,7 @@ spec:
       runIfChanged: ""
       skipBranches: {}
   presubmits:
+    replace: true
     entries:
     - agent: tekton
       alwaysRun: true
@@ -66,7 +68,6 @@ spec:
       name: promotion-build
       optional: false
       policy:
-        Replace: false
         requiredStatusChecks:
           contexts:
             entries:
@@ -74,7 +75,9 @@ spec:
       queries:
       - excludedBranches: {}
         includedBranches: {}
-        labels: {}
+        labels:
+          entries:
+          - approved
         milestone: ""
         missingLabels:
           entries:
