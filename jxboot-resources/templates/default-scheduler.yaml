@@ -38,7 +38,6 @@ spec:
     - cat
     - dog
     - pony
-    - override
   policy:
     protectTested: true
   postsubmits:
