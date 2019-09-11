@@ -37,6 +37,7 @@ spec:
 {{- end }}
     kubeProvider: gke
     pipelineUsername: "{{ .Values.JenkinsXGitHub.username }}"
+    pipelineUserEmail: "{{ .Values.JenkinsXGitHub.email }}"
     prowConfig: Scheduler
 {{- if eq .Values.gitops.webhook "jenkins" }}
     promotionEngine: Jenkins
