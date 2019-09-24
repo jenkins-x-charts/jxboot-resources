@@ -16,5 +16,5 @@ spec:
   description: "the git repository for the Staging environment"
   scheduler:
     kind: Scheduler
-    name: env-scheduler
+    name: "{{ .Values.gitops.staging.scheduler }}"
 {{- end }}

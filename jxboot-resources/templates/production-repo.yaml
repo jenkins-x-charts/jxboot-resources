@@ -16,5 +16,5 @@ spec:
   description: "the git repository for the Production environment"
   scheduler:
     kind: Scheduler
-    name: env-scheduler
+    name: "{{ .Values.gitops.production.scheduler }}"
 {{- end }}

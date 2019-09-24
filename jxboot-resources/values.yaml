@@ -21,6 +21,7 @@ gitops:
     owner: ""
     repo: ""
     server: ""
+    scheduler: env-scheduler
   gitKind: github
   gitName: ""
   gitUrlPathPrefix: ""
@@ -29,11 +30,13 @@ gitops:
     owner: ""
     repo: ""
     server: ""
+    scheduler: env-scheduler
   server: https://github.com
   staging:
     owner: ""
     repo: ""
     server: ""
+    scheduler: env-scheduler
   versionStreamRef: ""
   versionStreamUrl: https://github.com/jenkins-x/jenkins-x-versions.git
   webhook: ""
