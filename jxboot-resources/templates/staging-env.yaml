@@ -11,6 +11,7 @@ spec:
   previewGitInfo:
     user: {}
   promotionStrategy: Auto
+  remote: {{ .Values.gitops.staging.remote }}
   source:
     ref: master
     url: "{{ .Values.gitops.staging.server | default .Values.gitops.server }}{{ .Values.gitops.gitUrlPathPrefix}}/{{ .Values.gitops.staging.owner | default .Values.gitops.owner }}/{{ .Values.gitops.staging.repo }}.git"
