@@ -31,12 +31,14 @@ gitops:
     repo: ""
     server: ""
     scheduler: env-scheduler
+    remote: false
   server: https://github.com
   staging:
     owner: ""
     repo: ""
     server: ""
     scheduler: env-scheduler
+    remote: false
   versionStreamRef: ""
   versionStreamUrl: https://github.com/jenkins-x/jenkins-x-versions.git
   webhook: ""
