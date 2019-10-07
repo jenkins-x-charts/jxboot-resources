@@ -36,7 +36,7 @@ spec:
 {{- else }}
     helmTemplate: true
 {{- end }}
-    kubeProvider: gke
+    kubeProvider: "{{ .Values.cluster.provider }}"
     pipelineUsername: "{{ .Values.JenkinsXGitHub.username }}"
     pipelineUserEmail: "{{ .Values.JenkinsXGitHub.email }}"
     prowConfig: Scheduler
