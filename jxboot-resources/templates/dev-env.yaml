@@ -29,6 +29,7 @@ spec:
     dockerRegistryOrg: "{{ .Values.gitops.dev.dockerRegistryOrg }}"
     envOrganisation: "{{ .Values.gitops.dev.envOrganisation }}"
     gitServer: https://github.com
+    gitPublic: {{ .Values.gitops.gitPublic }}
 {{- if eq .Values.helmMajorVersion "3" }}
     helmBinary: "helm3"
     helmTemplate: false

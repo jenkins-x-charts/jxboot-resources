@@ -25,6 +25,7 @@ gitops:
   gitKind: github
   gitName: ""
   gitUrlPathPrefix: ""
+  gitPublic: false
   owner: ""
   production:
     owner: ""
