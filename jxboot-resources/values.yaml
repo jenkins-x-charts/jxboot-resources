@@ -65,3 +65,5 @@ storage:
 namespace:
   enabled: true
 helmMajorVersion: "2"
+vault:
+  enabled: false
