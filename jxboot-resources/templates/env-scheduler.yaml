@@ -87,6 +87,20 @@ spec:
           - needs-ok-to-test
           - needs-rebase
         reviewApprovedRequired: false
+      - excludedBranches: {}
+        includedBranches: {}
+        labels:
+          entries:
+          - updatebot
+        milestone: ""
+        missingLabels:
+          entries:
+          - do-not-merge
+          - do-not-merge/hold
+          - do-not-merge/work-in-progress
+          - needs-ok-to-test
+          - needs-rebase
+        reviewApprovedRequired: false
       report: true
       rerunCommand: /test this
       runIfChanged: ""
