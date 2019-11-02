@@ -3,6 +3,8 @@ JenkinsXGitHub:
   username: ""
 bucketrepo:
   enabled: false
+  password: ""
+  username: ""
 certmanager:
   enabled: false
   production: "false"
