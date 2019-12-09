@@ -19,9 +19,9 @@ spec:
 {{- end }}
   teamSettings:
     appsRepository: http://chartmuseum.jenkins-x.io
-    buildPackName: kubernetes-workloads
-    buildPackRef: master
-    buildPackUrl: https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes.git
+    buildPackName: {{ .Values.gitops.dev.buildPackName }}
+    buildPackRef: {{ .Values.gitops.dev.buildPackRef }}
+    buildPackUrl: {{ .Values.gitops.dev.buildPackUrl }}
     defaultScheduler:
       apiVersion: jenkins.io/v1
       kind: Scheduler
@@ -49,13 +49,7 @@ spec:
     prowEngine: Tekton
 {{- end }}
     quickstartLocations:
-    - excludes:
-      - WIP-*
-      gitKind: github
-      gitUrl: https://github.com
-      includes:
-      - '*'
-      owner: jenkins-x-quickstarts
+{{ toYaml .Values.gitops.dev.quickstartLocations | indent 6 }}
 {{- if or .Values.storage.logs.url .Values.storage.reports.url }}
     storageLocations:
 {{- end }}
