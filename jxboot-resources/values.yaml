@@ -39,6 +39,7 @@ gitops:
     server: ""
     scheduler: env-scheduler
     remote: false
+    namespace: jx-production
   server: https://github.com
   staging:
     owner: ""
@@ -46,6 +47,7 @@ gitops:
     server: ""
     scheduler: env-scheduler
     remote: false
+    namespace: jx-staging
   versionStreamRef: ""
   versionStreamUrl: https://github.com/jenkins-x/jenkins-x-versions.git
   webhook: ""

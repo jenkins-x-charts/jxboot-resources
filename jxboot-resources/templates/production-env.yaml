@@ -7,7 +7,7 @@ metadata:
 spec:
   kind: Permanent
   label: Production
-  namespace: {{ .Values.cluster.namespace | default "jx" }}-production
+  namespace: {{ .Values.gitops.production.namespace }}
   order: 200
   previewGitInfo:
     user: {}
