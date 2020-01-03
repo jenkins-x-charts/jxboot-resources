@@ -6,7 +6,7 @@ metadata:
 spec:
   kind: Permanent
   label: Staging
-  namespace: {{ .Values.cluster.namespace | default "jx" }}-staging
+  namespace: {{ .Values.gitops.production.namespace }}
   order: 100
   previewGitInfo:
     user: {}
