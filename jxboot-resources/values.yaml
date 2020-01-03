@@ -28,6 +28,17 @@ gitops:
     repo: ""
     server: ""
     scheduler: env-scheduler
+    buildPackName: kubernetes-workloads
+    buildPackRef: master
+    buildPackUrl: https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes.git
+    quickstartLocations:
+    - excludes:
+      - WIP-*
+      gitKind: github
+      gitUrl: https://github.com
+      includes:
+      - '*'
+      owner: jenkins-x-quickstarts
   gitKind: github
   gitName: ""
   gitUrlPathPrefix: ""
