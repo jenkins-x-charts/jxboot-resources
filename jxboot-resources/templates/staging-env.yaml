@@ -6,7 +6,7 @@ metadata:
 spec:
   kind: Permanent
   label: Staging
-  namespace: {{ .Values.gitops.production.namespace }}
+  namespace: {{ .Values.gitops.staging.namespace }}
   order: 100
   previewGitInfo:
     user: {}
