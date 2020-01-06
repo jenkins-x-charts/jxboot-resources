@@ -2,7 +2,7 @@
 apiVersion: jenkins.io/v1
 kind: SourceRepository
 metadata:
-  name: "{{ .Values.gitops.dev.owner | default .Values.gitops.owner }}-{{ .Values.gitops.dev.repo }}"
+  name: "{{ .Values.gitops.dev.owner | default .Values.gitops.owner | lower }}-{{ .Values.gitops.dev.repo }}"
   labels:
     jenkins.io/gitSync: "false"
 spec:
