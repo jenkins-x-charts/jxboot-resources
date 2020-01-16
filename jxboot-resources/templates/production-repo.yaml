@@ -2,7 +2,7 @@
 apiVersion: jenkins.io/v1
 kind: SourceRepository
 metadata:
-  name: "{{ .Values.gitops.production.owner | default .Values.gitops.owner }}-{{ .Values.gitops.production.repo }}"
+  name: "{{ .Values.gitops.production.owner | default .Values.gitops.owner | lower }}-{{ .Values.gitops.production.repo }}"
   labels:
     jenkins.io/gitSync: "false"
 spec:
@@ -16,5 +16,5 @@ spec:
   description: "the git repository for the Production environment"
   scheduler:
     kind: Scheduler
-    name: env-scheduler
+    name: "{{ .Values.gitops.production.scheduler }}"
 {{- end }}

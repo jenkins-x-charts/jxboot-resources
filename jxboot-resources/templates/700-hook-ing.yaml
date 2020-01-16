@@ -5,6 +5,9 @@ metadata:
   name: hook
   annotations:
     kubernetes.io/ingress.class: nginx
+{{- if .Values.cluster.ingress.annotations }}
+{{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
+{{- end }}
 spec:
   rules:
   - host: hook{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}

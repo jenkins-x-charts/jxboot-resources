@@ -7,11 +7,12 @@ metadata:
 spec:
   kind: Permanent
   label: Production
-  namespace: {{ .Values.cluster.namespace | default "jx" }}-production
+  namespace: {{ .Values.gitops.production.namespace }}
   order: 200
   previewGitInfo:
     user: {}
   promotionStrategy: Manual
+  remote: {{ .Values.gitops.production.remote }}
   source:
     ref: master
     url: "{{ .Values.gitops.production.server | default .Values.gitops.server }}{{ .Values.gitops.gitUrlPathPrefix}}/{{ .Values.gitops.production.owner | default .Values.gitops.owner }}/{{ .Values.gitops.production.repo }}.git"

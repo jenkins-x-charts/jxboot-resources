@@ -19,9 +19,9 @@ spec:
 {{- end }}
   teamSettings:
     appsRepository: http://chartmuseum.jenkins-x.io
-    buildPackName: kubernetes-workloads
-    buildPackRef: master
-    buildPackUrl: https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes.git
+    buildPackName: {{ .Values.gitops.dev.buildPackName }}
+    buildPackRef: {{ .Values.gitops.dev.buildPackRef }}
+    buildPackUrl: {{ .Values.gitops.dev.buildPackUrl }}
     defaultScheduler:
       apiVersion: jenkins.io/v1
       kind: Scheduler
@@ -29,14 +29,16 @@ spec:
     dockerRegistryOrg: "{{ .Values.gitops.dev.dockerRegistryOrg }}"
     envOrganisation: "{{ .Values.gitops.dev.envOrganisation }}"
     gitServer: https://github.com
+    gitPublic: {{ .Values.gitops.gitPublic }}
 {{- if eq .Values.helmMajorVersion "3" }}
     helmBinary: "helm3"
     helmTemplate: false
 {{- else }}
     helmTemplate: true
 {{- end }}
-    kubeProvider: gke
+    kubeProvider: "{{ .Values.cluster.provider }}"
     pipelineUsername: "{{ .Values.JenkinsXGitHub.username }}"
+    pipelineUserEmail: "{{ .Values.JenkinsXGitHub.email }}"
     prowConfig: Scheduler
 {{- if eq .Values.gitops.webhook "jenkins" }}
     promotionEngine: Jenkins
@@ -47,13 +49,7 @@ spec:
     prowEngine: Tekton
 {{- end }}
     quickstartLocations:
-    - excludes:
-      - WIP-*
-      gitKind: github
-      gitUrl: https://github.com
-      includes:
-      - '*'
-      owner: jenkins-x-quickstarts
+{{ toYaml .Values.gitops.dev.quickstartLocations | indent 6 }}
 {{- if or .Values.storage.logs.url .Values.storage.reports.url }}
     storageLocations:
 {{- end }}
