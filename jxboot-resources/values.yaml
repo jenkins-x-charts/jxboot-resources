@@ -88,3 +88,8 @@ namespace:
 helmMajorVersion: "2"
 vault:
   enabled: false
+autoUpdate:
+  schedule:
+  enabled: false
+versions:
+  builders:
