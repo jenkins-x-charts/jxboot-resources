@@ -58,3 +58,8 @@ storage:
 namespace:
   enabled: true
 helmMajorVersion: "2"
+autoUpdate:
+  schedule:
+  enabled: false
+versions:
+  builders:
