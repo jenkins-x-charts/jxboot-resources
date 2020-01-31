@@ -70,6 +70,7 @@ jenkins:
 jenkins-x-platform:
   chartmuseum:
     enabled: true
+    ingress: true
 lighthouse:
   enabled: true
 nexus:
