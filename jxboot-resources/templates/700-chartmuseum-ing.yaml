@@ -1,4 +1,5 @@
 {{- if index .Values "jenkins-x-platform" "chartmuseum" "enabled" }}
+{{- if index .Values "jenkins-x-platform" "chartmuseum" "ingress" }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -24,6 +25,7 @@ spec:
     secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-p"
 {{- else }}
     secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-s"
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
