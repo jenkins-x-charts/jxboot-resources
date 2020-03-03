@@ -87,6 +87,7 @@ spec:
           - needs-ok-to-test
           - needs-rebase
         reviewApprovedRequired: false
+{{- if .Values.mergeUpdatebotPRs }} 
       - excludedBranches: {}
         includedBranches: {}
         labels:
@@ -101,6 +102,7 @@ spec:
           - needs-ok-to-test
           - needs-rebase
         reviewApprovedRequired: false
+{{- end }}
       report: true
       rerunCommand: /test this
       runIfChanged: ""

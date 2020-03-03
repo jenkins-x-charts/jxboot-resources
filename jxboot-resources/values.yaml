@@ -73,6 +73,7 @@ jenkins-x-platform:
     ingress: true
 lighthouse:
   enabled: true
+mergeUpdatebotPRs: true
 nexus:
   enabled: true
 prow:
