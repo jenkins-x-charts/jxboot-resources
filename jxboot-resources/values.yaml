@@ -65,6 +65,9 @@ gitops:
   versionStreamRef: ""
   versionStreamUrl: https://github.com/jenkins-x/jenkins-x-versions.git
   webhook: ""
+hook:
+  ingress:
+    class: nginx
 jenkins:
   enabled: false
 jenkins-x-platform:
