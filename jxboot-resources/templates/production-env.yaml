@@ -12,7 +12,7 @@ spec:
   previewGitInfo:
     user: {}
   promotionStrategy: Manual
-  remote: {{ .Values.gitops.production.remote }}
+  remoteCluster: {{ .Values.gitops.production.remote }}
   source:
     ref: master
     url: "{{ .Values.gitops.production.server | default .Values.gitops.server }}{{ .Values.gitops.gitUrlPathPrefix}}/{{ .Values.gitops.production.owner | default .Values.gitops.owner }}/{{ .Values.gitops.production.repo }}.git"
