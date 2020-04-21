@@ -5,6 +5,9 @@ bucketrepo:
   enabled: false
   password: ""
   username: ""
+  ingress:
+    tls:
+      secretName: ""
 certmanager:
   enabled: false
   production: "false"
@@ -19,10 +22,15 @@ cluster:
   serverUrl: ""
   zone: ""
   ingress:
+    tls:
+      secretName: ""
     annotations:
 #      kubernetes.io/ingress.class: nginx
 docker-registry:
   enabled: false
+  ingress:
+    tls:
+      secretName: ""
 gitops:
   dev:
     dockerRegistryOrg: ""
@@ -68,19 +76,38 @@ gitops:
 hook:
   ingress:
     class: nginx
+    tls:
+      secretName: ""
 jenkins:
   enabled: false
+  ingress:
+    tls:
+      secretName: ""
 jenkins-x-platform:
   chartmuseum:
     enabled: true
-    ingress: true
+    ingress:
+      enabled: true
+      tls:
+        secretName: ""
 lighthouse:
   enabled: true
 mergeUpdatebotPRs: true
 nexus:
   enabled: true
+  ingress:
+    tls:
+      secretName: ""
 prow:
   enabled: false
+tide:
+  ingress:
+    tls:
+      secretName: ""
+deck:
+  ingress:
+    tls:
+      secretName: ""
 storage:
   logs:
     url: ""

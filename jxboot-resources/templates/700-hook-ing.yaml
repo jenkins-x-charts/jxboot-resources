@@ -20,7 +20,11 @@ spec:
   tls:
   - hosts:
     - hook{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
-{{- if eq .Values.certmanager.production "true" }}
+{{- if .Values.hook.ingress.tls.secretName }}
+    secretName: "{{ .Values.hook.ingress.tls.secretName }}"
+{{- else if .Values.cluster.ingress.tls.secretName }}
+    secretName: "{{ .Values.cluster.ingress.tls.secretName }}"
+{{- else if eq .Values.certmanager.production "true" }}
     secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-p"
 {{- else }}
     secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-s"
