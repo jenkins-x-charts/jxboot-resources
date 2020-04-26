@@ -86,10 +86,11 @@ jenkins:
 jenkins-x-platform:
   chartmuseum:
     enabled: true
-    ingress:
-      enabled: true
-      tls:
-        secretName: ""
+    ingress: true
+chartmuseum:
+  ingress:
+    tls:
+      secretName: ""
 lighthouse:
   enabled: true
 mergeUpdatebotPRs: true

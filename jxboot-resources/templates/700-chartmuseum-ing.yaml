@@ -1,5 +1,5 @@
 {{- if index .Values "jenkins-x-platform" "chartmuseum" "enabled" }}
-{{- if index .Values "jenkins-x-platform" "chartmuseum" "ingress" "enabled" }}
+{{- if index .Values "jenkins-x-platform" "chartmuseum" "ingress" }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -21,8 +21,8 @@ spec:
   tls:
   - hosts:
     - chartmuseum{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
-{{- if index .Values "jenkins-x-platform" "chartmuseum" "ingress" "tls" "secretName" }}
-    secretName: "{{ index .Values "jenkins-x-platform" "chartmuseum" "ingress" "tls" "secretName" }}"
+{{- if .Values.chartmuseum.ingress.tls.secretName }}
+    secretName: "{{ .Values.chartmuseum.ingress.tls.secretName }}"
 {{- else if .Values.cluster.ingress.tls.secretName }}
     secretName: "{{ .Values.cluster.ingress.tls.secretName }}"
 {{- else if eq .Values.certmanager.production "true" }}
