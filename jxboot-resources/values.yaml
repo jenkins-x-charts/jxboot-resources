@@ -20,6 +20,7 @@ cluster:
   provider: ""
   projectID: ""
   serverUrl: ""
+  strictPermissions: false
   zone: ""
   ingress:
     tls:

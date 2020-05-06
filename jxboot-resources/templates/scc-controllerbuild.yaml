@@ -1,0 +1,34 @@
+{{- if and (eq .Values.cluster.provider "openshift") ( eq .Values.cluster.strictPermissions false) }}
+apiVersion: v1
+defaultAddCapabilities: []
+allowHostDirVolumePlugin: false
+allowHostIPC: false
+allowHostNetwork: false
+allowHostPID: false
+allowHostPorts: false
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: false
+allowedCapabilities: []
+fsGroup:
+  type: MustRunAs
+kind: SecurityContextConstraints
+metadata:
+  name: scc-jx-controllerbuild
+priority: 1
+readOnlyRootFilesystem: false
+requiredDropCapabilities:
+- KILL
+- MKNOD
+- SETUID
+- SETGID
+runAsUser:
+  type: RunAsAny
+seLinuxContext:
+  type: MustRunAs
+supplementalGroups:
+  type: RunAsAny
+users:
+- system:serviceaccount:jx:jenkins-x-controllerbuild
+volumes:
+- secret
+{{- end }}
