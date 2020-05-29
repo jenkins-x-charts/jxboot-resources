@@ -7,6 +7,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if .Values.jenkins.ingress.annotations }}
+{{ toYaml .Values.jenkins.ingress.annotations | indent 4 }}
+{{- end }}
   name: jenkins
 spec:
   rules:

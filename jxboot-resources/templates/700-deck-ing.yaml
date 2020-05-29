@@ -9,6 +9,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if .Values.deck.ingress.annotations }}
+{{ toYaml .Values.deck.ingress.annotations | indent 4 }}
+{{- end }}
   name: deck
 spec:
   rules:

@@ -8,6 +8,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if .Values.hook.ingress.annotations }}
+{{ toYaml .Values.hook.ingress.annotations | indent 4 }}
+{{- end }}
 spec:
   rules:
   - host: hook{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}

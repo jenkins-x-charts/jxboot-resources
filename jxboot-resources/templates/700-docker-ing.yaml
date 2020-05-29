@@ -9,6 +9,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if index .Values "docker-registry" "ingress" "annotations" }}
+{{ toYaml (index .Values "docker-registry" "ingress" "annotations") | indent 4 }}
+{{- end }}
   name: docker-registry
 spec:
   rules:
