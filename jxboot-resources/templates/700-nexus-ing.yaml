@@ -7,6 +7,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if .Values.nexus.ingress.annotations }}
+{{ toYaml .Values.nexus.ingress.annotations | indent 4 }}
+{{- end }}
   name: nexus
 spec:
   rules:

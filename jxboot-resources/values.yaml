@@ -6,6 +6,7 @@ bucketrepo:
   password: ""
   username: ""
   ingress:
+    annotations:
     tls:
       secretName: ""
 certmanager:
@@ -30,6 +31,7 @@ cluster:
 docker-registry:
   enabled: false
   ingress:
+    annotations:
     tls:
       secretName: ""
 gitops:
@@ -77,11 +79,13 @@ gitops:
 hook:
   ingress:
     class: nginx
+    annotations:
     tls:
       secretName: ""
 jenkins:
   enabled: false
   ingress:
+    annotations:
     tls:
       secretName: ""
 jenkins-x-platform:
@@ -90,6 +94,7 @@ jenkins-x-platform:
     ingress: true
 chartmuseum:
   ingress:
+    annotations:
     tls:
       secretName: ""
 lighthouse:
@@ -98,16 +103,19 @@ mergeUpdatebotPRs: true
 nexus:
   enabled: true
   ingress:
+    annotations:
     tls:
       secretName: ""
 prow:
   enabled: false
 tide:
   ingress:
+    annotations:
     tls:
       secretName: ""
 deck:
   ingress:
+    annotations:
     tls:
       secretName: ""
 storage:

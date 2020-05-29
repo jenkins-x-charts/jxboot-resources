@@ -7,6 +7,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if .Values.bucketrepo.ingress.annotations }}
+{{ toYaml .Values.bucketrepo.ingress.annotations | indent 4 }}
+{{- end }}
   name: bucketrepo
 spec:
   rules:

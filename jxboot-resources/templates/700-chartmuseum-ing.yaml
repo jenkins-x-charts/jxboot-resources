@@ -8,6 +8,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if .Values.chartmuseum.ingress.annotations }}
+{{ toYaml .Values.chartmuseum.ingress.annotations | indent 4 }}
+{{- end }}
   name: chartmuseum
 spec:
   rules:

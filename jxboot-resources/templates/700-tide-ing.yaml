@@ -9,6 +9,9 @@ metadata:
 {{- if .Values.cluster.ingress.annotations }}
 {{ toYaml .Values.cluster.ingress.annotations | indent 4 }}
 {{- end }}
+{{- if .Values.tide.ingress.annotations }}
+{{ toYaml .Values.tide.ingress.annotations | indent 4 }}
+{{- end }}
   name: tide
 spec:
   rules:
