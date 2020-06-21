@@ -11,14 +11,14 @@ metadata:
 {{- if .Values.chartmuseum.ingress.annotations }}
 {{ toYaml .Values.chartmuseum.ingress.annotations | indent 4 }}
 {{- end }}
-  name: chartmuseum
+  name: {{.Release.Name}}-chartmuseum
 spec:
   rules:
   - host: chartmuseum{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
     http:
       paths:
       - backend:
-          serviceName: jenkins-x-chartmuseum
+          serviceName: {{.Release.Name}}-chartmuseum
           servicePort: 8080
 {{- if .Values.cluster.tls }}
   tls:
