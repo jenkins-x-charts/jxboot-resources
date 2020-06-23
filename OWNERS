@@ -1,7 +1,6 @@
 approvers:
 - rawlingsj
 - jstrachan
-- rajdavies
 - ccojocar
 - garethjevans
 - pmuir
@@ -9,10 +8,11 @@ approvers:
 - cagiti
 - macox
 - daveconde
+- dgozalo
+- hferentschik
 reviewers:
 - rawlingsj
 - jstrachan
-- rajdavies
 - ccojocar
 - garethjevans
 - pmuir
@@ -20,3 +20,5 @@ reviewers:
 - cagiti
 - macox
 - daveconde
+- dgozalo
+- hferentschik
