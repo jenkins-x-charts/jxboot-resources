@@ -22,6 +22,7 @@ spec:
             - upgrade
             - boot
             - --latest-release=true
+            - --batch-mode
             command:
             - jx
             image: gcr.io/jenkinsxio/builder-go:{{ .Values.versions.builders }}
